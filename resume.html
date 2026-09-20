@@ -1,0 +1,490 @@
+<title>Praveen Kumar Resume</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-sidebar: #0f4c3a;
+    --bg-sidebar-accent: #0d3f30;
+    --text: #1a1a1a;
+    --text-muted: #4a4a4a;
+    --text-light: #f0f0f0;
+    --text-sidebar: #d4e8e0;
+    --accent: #0f4c3a;
+    --accent-light: #e8f0ed;
+    --border: #dde5e1;
+    --skill-bg: #f0f5f3;
+    --dot: #2a7d62;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111111;
+      --bg-sidebar: #0a3328;
+      --bg-sidebar-accent: #082a20;
+      --text: #e8e8e8;
+      --text-muted: #a0a0a0;
+      --text-light: #e0e0e0;
+      --text-sidebar: #c8ddd4;
+      --accent: #2a9d72;
+      --accent-light: #162420;
+      --border: #2a2a2a;
+      --skill-bg: #1a2520;
+      --dot: #3aad82;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111111;
+    --bg-sidebar: #0a3328;
+    --bg-sidebar-accent: #082a20;
+    --text: #e8e8e8;
+    --text-muted: #a0a0a0;
+    --text-light: #e0e0e0;
+    --text-sidebar: #c8ddd4;
+    --accent: #2a9d72;
+    --accent-light: #162420;
+    --border: #2a2a2a;
+    --skill-bg: #1a2520;
+    --dot: #3aad82;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 640px) {
+    .page {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background: var(--bg-sidebar);
+    color: var(--text-light);
+    padding: 36px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .sidebar h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--text-sidebar);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-sidebar);
+    margin-bottom: 8px;
+  }
+  .contact-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .skill-group { margin-bottom: 14px; }
+  .skill-group-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .skill-tag {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-sidebar);
+    font-size: 11.5px;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  .edu-item { margin-bottom: 14px; }
+  .edu-year {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--dot);
+    letter-spacing: 0.5px;
+  }
+  .edu-school {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 2px;
+  }
+  .edu-detail {
+    font-size: 12px;
+    color: var(--text-sidebar);
+  }
+
+  .cert-item {
+    margin-bottom: 8px;
+  }
+  .cert-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .cert-desc {
+    font-size: 12px;
+    color: var(--text-sidebar);
+  }
+
+  .lang-list {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-sidebar);
+  }
+
+  /* Main content */
+  .main {
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      padding: 24px 16px;
+    }
+  }
+
+  .header h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+  .header .role {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .summary {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .job { margin-bottom: 24px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin-bottom: 4px;
+  }
+  .job-company {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .job-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .job-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+  .job-role {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .job ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .job li {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding-left: 14px;
+    position: relative;
+  }
+  .job li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dot);
+  }
+
+  .key-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h3>Contact</h3>
+      <div class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Ghaziabad, India</span>
+      </div>
+      <div class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91-8700234827</span>
+      </div>
+      <div class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>rhcapraveenkumar@gmail.com</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Key Skills</h3>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud (AWS)</div>
+        <div class="skill-tags">
+          <span class="skill-tag">EC2</span><span class="skill-tag">IAM</span><span class="skill-tag">RDS</span><span class="skill-tag">S3</span><span class="skill-tag">CloudFront</span><span class="skill-tag">Route53</span><span class="skill-tag">ALB/ELB</span><span class="skill-tag">EBS</span><span class="skill-tag">CloudWatch</span><span class="skill-tag">CloudFormation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">IaC / DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Terraform</span><span class="skill-tag">Terragrunt</span><span class="skill-tag">GitLab CI/CD</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Puppet</span><span class="skill-tag">Ansible</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Containers</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes (EKS)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Monitoring / Logging</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span><span class="skill-tag">Loki</span><span class="skill-tag">CloudWatch</span><span class="skill-tag">Zabbix</span><span class="skill-tag">Nagios</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Scripting & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Bash</span><span class="skill-tag">Python</span><span class="skill-tag">Git</span><span class="skill-tag">Maven</span><span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">OS</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Linux (RHCSA/RHCE)</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Education</h3>
+      <div class="edu-item">
+        <div class="edu-year">2014</div>
+        <div class="edu-school">ABES IT, GBTU</div>
+        <div class="edu-detail">B.Tech / B.E. — Ghaziabad</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2008</div>
+        <div class="edu-school">Andhra Edu Society SSS</div>
+        <div class="edu-detail">12th — Delhi</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2006</div>
+        <div class="edu-school">Children's Academy</div>
+        <div class="edu-detail">10th — Ghaziabad</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Certifications</h3>
+      <div class="cert-item">
+        <div class="cert-name">RHCSA</div>
+        <div class="cert-desc">Red Hat Certified System Administrator</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">DevOps Certification</div>
+        <div class="cert-desc">DevOps principles and practices</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Languages</h3>
+      <div class="lang-list">
+        <span>English</span>
+        <span>Hindi</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="header">
+      <h1>PRAVEEN KUMAR</h1>
+      <div class="role">Engineering Infrastructure Manager</div>
+    </div>
+
+    <div class="summary">
+      Engineering Infrastructure Manager with 7+ years of experience spanning AWS cloud architecture, CI/CD, Kubernetes, Docker, and Infrastructure as Code. Currently leading infrastructure strategy and DevOps teams across multiple product lines. Strong hands-on expertise in Terraform/Terragrunt, GitLab CI/CD, Jenkins, and Linux administration (RHCSA). Skilled in monitoring/observability using CloudWatch, Prometheus, Grafana, Loki, Zabbix, and Nagios. Proven ability to automate deployments and manage cross-functional teams to improve reliability, speed, and stability across Dev/QA/Prod environments.
+    </div>
+
+    <section>
+      <div class="section-title">Work Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">DevKraft Technologies</span>
+          <span class="job-date">03/2026 - Present</span>
+        </div>
+        <div class="job-subtitle">Technology Services Company</div>
+        <div class="job-role">Engineering Infrastructure Manager</div>
+        <ul>
+          <li>Leading infrastructure strategy and DevOps operations across multiple client projects including WhiteSwan Securities, GoodMeeting, and Dekoder Voice AI.</li>
+          <li>Managing and mentoring a team of engineers, driving best practices in cloud infrastructure, CI/CD, and platform reliability.</li>
+          <li>Architecting scalable cloud-native infrastructure and deployment pipelines for diverse product lines spanning fintech, collaboration, and AI domains.</li>
+          <li>Establishing standardized DevOps workflows, IaC practices, and observability frameworks across all projects to ensure consistency and operational excellence.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Exclusive Markets Ltd</span>
+          <span class="job-date">02/2024 - 06/2025</span>
+        </div>
+        <div class="job-subtitle">Financial Services and Trading Solutions &middot; Remote</div>
+        <div class="job-role">DevOps Engineer</div>
+        <ul>
+          <li>Led end-to-end DevOps operations and AWS cloud strategy across Dev/QA/Prod, maintaining 99.9%+ availability.</li>
+          <li>Standardized Infrastructure as Code using Terraform + Terragrunt, reducing environment provisioning from 2-3 days to under 20 minutes.</li>
+          <li>Designed and maintained GitLab CI/CD pipelines for containerized applications, improving deployment speed and reducing release failures.</li>
+          <li>Built scalable container platform using Docker + Kubernetes (EKS) with autoscaling and safer rollouts.</li>
+          <li>Implemented observability using CloudWatch, Prometheus, Grafana, and Loki to reduce MTTR.</li>
+          <li>Drove AWS cost optimization (right-sizing, lifecycle policies, automation), reducing monthly spend by 20-25%.</li>
+          <li>Owned production reliability (incident response, RCA/post-mortems) and mentored team on IaC/Kubernetes best practices.</li>
+        </ul>
+        <div class="key-label">Key Automations</div>
+        <ul>
+          <li>Automated S3 Glacier log restore + auto-download using Bash + AWS CLI, reducing manual log retrieval time during audits/incidents.</li>
+          <li>Implemented branch-based GitLab CI/CD rules with Docker builds and availability validation.</li>
+          <li>Migrated application servers from Netmagic to AWS with zero downtime.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">One Mobikwik Systems Pvt. Ltd.</span>
+          <span class="job-date">04/2022 - 09/2023</span>
+        </div>
+        <div class="job-subtitle">Indian Financial Technology &middot; Digital Payments</div>
+        <div class="job-role">DevOps Engineer</div>
+        <ul>
+          <li>Built deployment jobs and automated operational tasks using Bash scripting, reducing manual effort and human error.</li>
+          <li>Implemented monitoring and alerting using Zabbix, enabling proactive detection and faster response times.</li>
+          <li>Set up centralized log shipping and retention using Amazon S3 + Loki, improving debugging efficiency and audit-ready storage.</li>
+          <li>Collaborated with development teams to support releases, troubleshoot production issues, and improve deployment confidence.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Capgemini India Pvt. Ltd.</span>
+          <span class="job-date">08/2021 - 03/2022</span>
+        </div>
+        <div class="job-subtitle">Consulting, Technology Services &amp; Digital Transformation</div>
+        <div class="job-role">DevOps Engineer</div>
+        <ul>
+          <li>Provisioned and managed AWS infrastructure: EC2, ALB/ELB, Route53, RDS, S3, CloudFront, EBS for enterprise workloads.</li>
+          <li>Performed daily health checks and troubleshooting for Linux servers (Apache, MySQL), improving uptime.</li>
+          <li>Implemented monitoring using Nagios for service availability and faster fault detection.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-company">Hindustan Times</span>
+          <span class="job-date">07/2019 - 06/2021</span>
+        </div>
+        <div class="job-subtitle">Media Organization &middot; High-Traffic Publishing</div>
+        <div class="job-role">DevOps Engineer</div>
+        <ul>
+          <li>Designed and maintained highly available infrastructure supporting 24x7 uptime and high-traffic media workloads.</li>
+          <li>Supported continuous delivery pipeline, improving deployment cadence from weekly to daily releases.</li>
+          <li>Coordinated with engineering/ops teams to streamline releases and reduce deployment risk.</li>
+          <li>Proactively monitored infrastructure health during traffic spikes and critical publishing windows.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
